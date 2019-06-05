@@ -1,4 +1,4 @@
-The following projects containts source code to compute the characteristic
+The following project contains source code to compute the characteristic
 functions, price call options, and calibrate parameters to a dataset for the
 three affine jump diffuion models:
 	1. The Heston Stochastic Volatility Model,
