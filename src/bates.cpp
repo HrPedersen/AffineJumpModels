@@ -100,10 +100,10 @@ boost::numeric::ublas::vector<double> CalibrateBates(boost::numeric::ublas::matr
     y.setlength(numRows);
     
     // Define parameters and bounds.
-	// 						vol, kappa, theta, sigma, rho, alpha, delta, lambda.
+    //                      vol, kappa, theta, sigma, rho, alpha, delta, lambda.
     real_1d_array c    = "[0.0672, 2.00, 0.10,  0.2, -0.5, -0.3,  0.2,  0.2]"; // initial guess
-	real_1d_array bndl = "[0.0672, 0.00, 0.10,  0.0, -1.0, -inf,  0.0,  0.0]";
-    real_1d_array bndu = "[0.0672, +inf, 0.10, +inf,  1.0, +inf, +inf, +inf]";
+    real_1d_array bndl = "[0.00, 0.00, 0.00,  0.0, -1.0, -inf,  0.0,  0.0]";
+    real_1d_array bndu = "[+inf, +inf, +inf, +inf,  1.0, +inf, +inf, +inf]";
 		
     // Fill arrays.
     long double tau, strike, r, q, impvol;
@@ -113,7 +113,7 @@ boost::numeric::ublas::vector<double> CalibrateBates(boost::numeric::ublas::matr
 		tau = call_data(i, 0); 	  // maturity
 		r = call_data(i, 1); 	  // rate
 		q = call_data(i, 2); 	  // dividend
-        strike = call_data(i, 3);  // strike
+                strike = call_data(i, 3);  // strike
 		impvol = call_data(i, 4);  // impvol
 		
 		price = EuropeanOptionBlackScholes(tau, spot, strike, impvol, r, q, 1, 1);
