@@ -85,9 +85,9 @@ boost::numeric::ublas::vector<double> CalibrateHeston(boost::numeric::ublas::mat
     y.setlength(numRows);
     
     // Define parameters and bounds.
-	// 						vol, kappa, theta, sigma, rho.
-    real_1d_array c    = "[0.1,  5.0,  0.15, 0.25, -0.5]";      // initial guess
-    real_1d_array bndl = "[0.07,  0.0,  0.1,  0.0, -1.0]";
+    //                     vol, kappa, theta, sigma, rho.
+    real_1d_array c    = "[0.10,  5.00,  0.15, 0.25, -0.5]";      // initial guess
+    real_1d_array bndl = "[0.00,  0.00,  0.00,  0.00, -1.0]";
     real_1d_array bndu = "[+inf, +inf, +inf, +inf, +1.0]";
 
     // Fill arrays.
